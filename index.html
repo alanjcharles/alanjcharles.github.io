@@ -27,6 +27,9 @@
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
+    
+ <link  id='free-trial-link' href="google.com">
+    
     <script type="text/javascript">
       function identify(e){
         e.preventDefault();
@@ -50,6 +53,14 @@
         });
       }
 </script>
+ <script>
+     var link = document.getElementById('free-trial-link');
+
+    analytics.trackLink(link, 'Clicked Free-Trial Link', {
+        plan: 'Enterprise'
+    });
+ </script>
+    
     <!--Placeholder for identify and track script -->
 </body> 
 </html>
