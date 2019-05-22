@@ -55,8 +55,8 @@
  <script>
      var link = document.getElementById('free-trial-link');
 
-    analytics.trackLink(link, 'Clicked Free-Trial Link', {
-        plan: 'Enterprise'
+    analytics.trackLink(link, 'Clicked Free-Trial Link', function() {
+       window.location.href = "";
     });
  </script>
     
