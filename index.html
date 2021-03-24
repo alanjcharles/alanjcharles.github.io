@@ -12,14 +12,10 @@
   
   var SMW = function({ payload, next, integrations }) {
   console.log(payload);
+  console.log('hello')
   next(payload);
 };
 
-    function (input) {
-              var next = input.next;
-              var payload = input.payload;
-              console.log("Segment fired an event: ", payload);
-              next(payload);
 </script>
 </head> 
 <body> 
