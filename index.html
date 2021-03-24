@@ -7,6 +7,19 @@
   analytics.load("8DfQelNkh74Waun37lOsdJemnCFCAUWc");
   analytics.page();
   }}();
+    
+  analytics.addSourceMiddleware(SMW1);
+  
+  var SMW = function({ payload, next, integrations }) {
+  console.log(payload);
+  next(payload);
+};
+
+    function (input) {
+              var next = input.next;
+              var payload = input.payload;
+              console.log("Segment fired an event: ", payload);
+              next(payload);
 </script>
 </head> 
 <body> 
