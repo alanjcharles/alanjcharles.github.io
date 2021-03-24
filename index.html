@@ -58,12 +58,11 @@
     analytics.trackLink(link, 'Clicked Free-Trial Link', function() {
        window.location.href = "";
     });
-    var SMW1 = function({ payload, next, integrations }) {
-       console.log(payload);
-       console.log('hello')
-       next(payload);
-   };
-    analytics.addSourceMiddleware(SMW1);
+analytics.addSourceMiddleware(function (input) {
+              var next = input.next;
+              var payload = input.payload;
+              console.log("Segment fired an event: ", payload);
+              next(payload);
  </script>
     
     <!--Placeholder for identify and track script -->
