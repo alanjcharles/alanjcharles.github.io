@@ -51,6 +51,12 @@
             window.location.href = "";
         });
       }
+                    analytics.addSourceMiddleware(function (input) {
+              var next = input.next;
+              var payload = input.payload;
+              console.log("Segment fired an event: ", payload);
+              next(payload);
+            });
 </script>
  <script>
      var link = document.getElementById('free-trial-link');
@@ -58,11 +64,6 @@
     analytics.trackLink(link, 'Clicked Free-Trial Link', function() {
        window.location.href = "";
     });
-analytics.addSourceMiddleware(function (input) {
-              var next = input.next;
-              var payload = input.payload;
-              console.log("Segment fired an event: ", payload);
-              next(payload);
  </script>
     
     <!--Placeholder for identify and track script -->
